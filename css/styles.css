@@ -1,0 +1,175 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+    --primary-color: #1e2a44;
+    --secondary-color: #7b8fb8;
+    --accent-color: #d4af37;
+    --tertiary-color: #4c326e;
+    --background-color: #f6f3ea;
+}
+
+/* primary-color and background-color have a good contrast ratio of 12.87:1*/
+
+body {
+    margin: 0;
+    background-color: var(--background-color);
+    height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+  gap: none;
+}
+
+.heroimage img {
+    max-width: 100%;
+}
+
+article img {
+    max-width: clamp(3rem, 100%, 450px);
+    height: auto;
+}
+
+p {color: var(--primary-color);font-family: DM Sans, system-ui, sans-serif; line-height: 1,5; max-width: 65ch; margin-left: 2rem;}
+h1 {color: var(--primary-color);font-family: Aboreto, system-ui, sans-serif; line-height: 1.2; margin-left: 2rem;}
+h2 {color: var(--primary-color);font-family: Aboreto, system-ui, sans-serif; line-height: 1.2; font-size: 1.8rem; max-width: 65ch; margin-left: 2rem;}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 999;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    padding: 0.2rem;
+    flex-wrap: wrap;
+}
+
+a.logo{
+    font-family: Aboreto, system-ui, sans-serif;
+    font-size: 2rem;
+    text-decoration: none;
+    color: var(--primary-color);
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar li a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-family: DM Sans, system-ui, sans-serif;
+}
+
+.aside {
+    padding: 1rem;
+}
+
+.hero {
+    margin: 0;
+}
+
+.heroimage {
+    margin: 0;
+}
+
+/* why is there sitll a space between the hero image and the banner?????? */
+
+.asidetext {
+    color: var(--primary-color);
+    font-family: EB Garamond, system-ui, sans-serif; 
+    font-weight: 600;
+    line-height: 1.2;
+    font-size: 2rem;
+    text-align: center;
+}
+
+
+.herotext {
+    background-color: var(--tertiary-color);
+    margin: 0;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    h1 {color:var(--background-color)}
+    p {color: var(--background-color)}
+}
+
+.herotext button {
+    background-color: var(--accent-color);
+    border: none;
+    padding: 0.5rem;
+    margin-left: 2rem;
+    border-radius: 6px;
+    a {
+        text-decoration: none; 
+        font-family: DM Sans, system-ui, sans-serif;
+        font-size: 1.2rem;
+    }
+}
+
+.carousel {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    justify-content: center;
+}
+
+article img {
+    border-radius: 12px;
+    justify-content: center;
+}
+
+.card{
+    justify-content: center;
+}
+.card p {
+    line-height: 0.5rem;
+}
+
+footer {
+    background-color: var(--tertiary-color);
+}
+
+footer {
+    h3 {
+        font-family: Aboreto;
+        color: var(--background-color);
+        font-size: 1.3rem;
+        margin-left: 2rem;
+    }
+    p {
+        color: var(--background-color);
+    }
+    margin-bottom: 0;
+    padding: 0.8rem;
+}
+
+/* media query broke */
+@media (min-width: 767px) {
+    nav {
+    flex-direction: row;
+    flex-wrap: none;
+    justify-content: space-between;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin-left: 2rem;
+}
