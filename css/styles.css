@@ -12,7 +12,7 @@
  all font sizes, padding, and max-width set to rem or ch 
  skip link is hidden until tabbed to
  nothing breaks when zoomed in 200%*/
- 
+
 body {
     margin: 0;
     background-color: var(--background-color);
@@ -44,11 +44,24 @@ h2 {color: var(--primary-color);font-family: Aboreto, system-ui, sans-serif; lin
   position: absolute;
   left: -9999px;
   top: auto;
+  z-index: -1;
 }
 
 .visually-hidden:focus {
     left: 0px;  
+    z-index: 1;
 }
+
+/* :focus-visible {
+    color: var(--primary-color);
+    border-radius: 3px;
+} */
+
+/* this actually makes the buttons less visible, the default focus styles seem to work just fine/better, especially for the gold cta button on the hero image. The default style for it creates a white outline withe a black outline on the inside, which contrasts well with the purple background and the gold button at the same time. Changing it makes the whole focus look become one colour, which makes the outline less visible.  */
+
+/* button:focus-visible, .cta:focus-visible {
+    outline: 3px;       
+} */
 
 nav {
     display: flex;
@@ -181,6 +194,7 @@ form {
     margin-left: 2rem;
 }
 
+/* important to have and one of the only good uses of !important because it has to override everything of someone has reduced motion settings.*/
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
